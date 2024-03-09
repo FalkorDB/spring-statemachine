@@ -23,8 +23,10 @@ If the required classes are found from the classpath, Spring Data Repositories
  and entity class scanning is automatically auto-configured
 for <<sm-repository>>.
 
-The currently supported configurations are `JPA`, `Redis`, and
-`MongoDB`. You can disable repository auto-configuration by using the
+The currently supported configurations are `JPA`, `Redis`, 
+`MongoDB` and `FalkorDB`. You can disable repository auto-configuration by using the
 `spring.statemachine.data.jpa.repositories.enabled`,
 `spring.statemachine.data.redis.repositories.enabled` and
-`spring.statemachine.data.mongo.repositories.enabled` properties, respectively.
+`spring.statemachine.data.mongo.repositories.enabled` and
+`spring.statemachine.data.falkordb.repositories.enabled` properties, respectively.
+

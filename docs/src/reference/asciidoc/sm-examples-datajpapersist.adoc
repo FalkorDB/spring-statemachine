@@ -4,7 +4,7 @@
 The data persist sample shows how you can state machine concepts
 with a persisting machine in an external repository. This sample uses
 an embedded H2 database with an H2 Console (to ease playing with the
-database). Optionally, you can also enable Redis or MongoDB.
+database). Optionally, you can also enable Redis, MongoDB or FalkorDB.
 
 This sample uses `spring-statemachine-autoconfigure` (which, by default,
 auto-configures the repositories and entity classes needed for JPA).
@@ -73,6 +73,16 @@ include::samples/demo/datapersist/StateMachineConfig.java[tags=snippetE]
 ----
 ====
 
+The following example shows how you can use a very similar configuration
+to create a bean for FalkorDB:
+
+====
+[source,java,indent=0]
+----
+include::samples/demo/datapersist/StateMachineConfig.java[tags=snippetF]
+----
+====
+
 The following listing shows the logic that drives the `StateMachineService` in this sample:
 
 ====
@@ -94,7 +104,7 @@ You can use the following command to run the sample:
 [NOTE]
 ====
 By default, the `jpa` profile is enabled in `application.yml`. If you want to try
-other backends, enable either the `mongo` profile or the `redis` profile.
+other backends, enable either the `mongo` profile, the `redis` profile or the `falkordb` profile.
 The following commands specify which profile to use (`jpa` is the default,
 but we included it for the sake of completeness):
 
@@ -104,6 +114,7 @@ but we included it for the sake of completeness):
 # java -jar spring-statemachine-samples-datapersist-{revnumber}.jar --spring.profiles.active=jpa
 # java -jar spring-statemachine-samples-datapersist-{revnumber}.jar --spring.profiles.active=mongo
 # java -jar spring-statemachine-samples-datapersist-{revnumber}.jar --spring.profiles.active=redis
+# java -jar spring-statemachine-samples-datapersist-{revnumber}.jar --spring.profiles.active=falkordb
 ----
 =====
 ====

@@ -1,0 +1,38 @@
+[
+	{
+		"@id": "3",
+		"_class": "org.springframework.statemachine.data.falkordb.FalkorDBRepositoryGuard",
+		"spel": "true"
+	},
+	{
+		"@id": "4",
+		"_class": "org.springframework.statemachine.data.falkordb.FalkorDBRepositoryAction",
+		"spel": "true"
+	},
+	{
+		"@id": "5",
+		"_class": "org.springframework.statemachine.data.falkordb.FalkorDBRepositoryAction",
+		"spel": "false"
+	},
+	{
+		"@id": "1",
+		"_class": "org.springframework.statemachine.data.falkordb.FalkorDBRepositoryState",
+		"initial": true,
+		"state": "S1"
+	},
+	{
+		"@id": "2",
+		"_class": "org.springframework.statemachine.data.falkordb.FalkorDBRepositoryState",
+		"initial": false,
+		"state": "S2"
+	},
+	{
+		"_class": "org.springframework.statemachine.data.falkordb.FalkorDBRepositoryTransition",
+		"source": "1",
+		"target": "2",
+		"event": "E1",
+		"kind": "EXTERNAL",
+		"guard": "3",
+		"actions": ["4", "5"]
+	}
+]
