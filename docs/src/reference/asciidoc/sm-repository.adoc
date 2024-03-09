@@ -251,3 +251,20 @@ The following example shows the generic way to persist a machine for MongoDB:
 include::samples/DocsMongoDbRepositorySampleTests1.java[tags=snippetC]
 ----
 ====
+
+[[sm-repository-persistence-falkordb]]
+==== FalkorDB
+
+The actual repository implementation for a FalkorDB is
+`FalkorDBStateMachineRepository`, which is backed by the entity class
+`FalkorDBRepositoryStateMachine`.
+
+The following example shows the generic way to persist a machine for FalkorDB:
+
+====
+[source,java,indent=0]
+----
+include::samples/DocsFalkorDBRepositorySampleTests1.java[tags=snippetC]
+----
+====
+

@@ -50,6 +50,9 @@ framework.
 |`spring-statemachine-data-mongodb`
 |Support module for `Spring Data MongoDB`.
 
+|`spring-statemachine-data-falkordb`
+|Support module for `Spring Data FalkorDB`.
+
 |`spring-statemachine-zookeeper`
 |Zookeeper integration for a distributed state machine.
 

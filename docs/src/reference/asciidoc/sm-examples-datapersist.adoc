@@ -94,7 +94,7 @@ You can use the following command to run the sample:
 [NOTE]
 ====
 By default, the `jpa` profile is enabled in `application.yml`. If you want to try
-other backends, enable either the `mongo` profile or the `redis` profile.
+other backends, enable either the `mongo` profile, the `redis` profile, or the `falkordb` profile.
 The following commands specify which profile to use (`jpa` is the default,
 but we included it for the sake of completeness):
 
@@ -104,6 +104,7 @@ but we included it for the sake of completeness):
 # java -jar spring-statemachine-samples-datapersist-{revnumber}.jar --spring.profiles.active=jpa
 # java -jar spring-statemachine-samples-datapersist-{revnumber}.jar --spring.profiles.active=mongo
 # java -jar spring-statemachine-samples-datapersist-{revnumber}.jar --spring.profiles.active=redis
+# java -jar spring-statemachine-samples-datapersist-{revnumber}.jar --spring.profiles.active=falkordb
 ----
 =====
 ====

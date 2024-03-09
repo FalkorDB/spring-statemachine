@@ -33,6 +33,8 @@ import org.springframework.statemachine.data.mongodb.MongoDbPersistingStateMachi
 import org.springframework.statemachine.data.mongodb.MongoDbStateMachineRepository;
 import org.springframework.statemachine.data.redis.RedisPersistingStateMachineInterceptor;
 import org.springframework.statemachine.data.redis.RedisStateMachineRepository;
+import org.springframework.statemachine.data.falkordb.FalkorDBPersistingStateMachineInterceptor;
+import org.springframework.statemachine.data.falkordb.FalkorDBStateMachineRepository;
 import org.springframework.statemachine.persist.StateMachineRuntimePersister;
 import org.springframework.statemachine.service.DefaultStateMachineService;
 import org.springframework.statemachine.service.StateMachineService;
@@ -78,6 +80,20 @@ public class StateMachineConfig {
 		}
 	}
 //end::snippetC[]
+
+
+//tag::snippetF[]
+@Configuration
+@Profile("falkordb")
+public static class FalkorDBPersisterConfig {
+
+	@Bean
+	public StateMachineRuntimePersister<States, Events, String> stateMachineRuntimePersister(
+		FalkorDBStateMachineRepository jpaStateMachineRepository) {
+		return new FalkorDBPersistingStateMachineInterceptor<>(jpaStateMachineRepository);
+	}
+}
+//end::snippetF[]
 
 	@Configuration
 	@EnableStateMachineFactory

@@ -238,12 +238,14 @@ project('spring-statemachine-autoconfigure') {
 		optional project(':spring-statemachine-data-common:spring-statemachine-data-jpa')
 		optional project(':spring-statemachine-data-common:spring-statemachine-data-redis')
 		optional project(':spring-statemachine-data-common:spring-statemachine-data-mongodb')
+		optional project(':spring-statemachine-data-common:spring-statemachine-data-falkordb')
 		optional 'org.springframework.boot:spring-boot-autoconfigure-processor'
 		optional 'io.micrometer:micrometer-core'
 		optional 'jakarta.persistence:jakarta.persistence-api'
 		optional 'org.springframework.boot:spring-boot-starter-data-jpa'
 		optional 'org.springframework.boot:spring-boot-starter-data-redis'
 		optional 'org.springframework.boot:spring-boot-starter-data-mongodb'
+		optional 'org.springframework.boot:spring-boot-starter-data-falkordb'
 		testRuntimeOnly 'com.h2database:h2'
 		testImplementation 'org.springframework.boot:spring-boot-test'
 		testImplementation 'org.springframework:spring-test'
@@ -409,11 +411,13 @@ project('spring-statemachine-build-tests') {
 		testImplementation project(':spring-statemachine-data-common:spring-statemachine-data-jpa')
 		testImplementation project(':spring-statemachine-data-common:spring-statemachine-data-redis')
 		testImplementation project(':spring-statemachine-data-common:spring-statemachine-data-mongodb')
+		testImplementation project(':spring-statemachine-data-common:spring-statemachine-data-falkordb')
 		testImplementation(testFixtures(project(":spring-statemachine-core")))
 		testImplementation 'io.projectreactor:reactor-test'
 		testImplementation 'org.apache.commons:commons-pool2'
 		testRuntimeOnly 'org.springframework.boot:spring-boot-starter-data-mongodb'
 		testRuntimeOnly 'org.springframework.boot:spring-boot-starter-data-redis'
+		testRuntimeOnly 'org.springframework.boot:spring-boot-starter-data-falkordb'
 		testRuntimeOnly 'redis.clients:jedis'
 		testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 		testImplementation 'com.h2database:h2'
@@ -635,6 +639,7 @@ configure(rootProject) {
 		from 'spring-statemachine-data/jpa/src/test/java/org/springframework/statemachine/data/jpa/docs'
 		from 'spring-statemachine-data/redis/src/test/java/org/springframework/statemachine/data/redis/docs'
 		from 'spring-statemachine-data/mongodb/src/test/java/org/springframework/statemachine/data/mongodb/docs'
+		from 'spring-statemachine-data/falkordb/src/test/java/org/springframework/statemachine/data/falkordb/docs'
 		from 'spring-statemachine-samples/src/main/java/'
 		from 'spring-statemachine-samples/washer/src/main/java/'
 		from 'spring-statemachine-samples/tasks/src/main/java/'

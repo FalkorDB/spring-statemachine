@@ -56,3 +56,23 @@ project('spring-statemachine-data-mongodb') {
 		testRuntimeOnly 'org.springframework.boot:spring-boot-starter-web'
 	}
 }
+
+project('spring-statemachine-data-falkordb') {
+	apply from: "$rootDir/gradle/java-test-fixtures.gradle"
+	description = 'Spring State Machine Data FalkorDB'
+
+	dependencies {
+		api project(':spring-statemachine-data-common')
+		api 'org.springframework.data:spring-data-falkordb'
+		testImplementation project(':spring-statemachine-test')
+        optional 'jakarta.persistence:jakarta.persistence-api'
+		testImplementation(testFixtures(project(":spring-statemachine-data-common")))
+		testImplementation(testFixtures(project(":spring-statemachine-core")))
+		testImplementation 'io.projectreactor:reactor-test'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		testRuntimeOnly 'org.apache.commons:commons-pool2'
+		testRuntimeOnly 'redis.clients:jedis'
+		testRuntimeOnly 'org.springframework.boot:spring-boot-starter-data-falkordb'
+		testRuntimeOnly 'org.springframework.boot:spring-boot-starter-web'
+	}
+}
